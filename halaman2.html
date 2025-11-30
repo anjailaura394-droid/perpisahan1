@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buku Digital + PDF CTA Unlock</title>
+
+<style>
+    body{
+        margin:0;
+        background:#e7dfc6;
+        font-family:"Times New Roman", serif;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        flex-direction:column;
+        padding:20px;
+        overflow-x:hidden;
+        animation:bgFade 2s ease;
+    }
+
+    @keyframes bgFade{
+        from{opacity:0; filter:blur(3px);}
+        to{opacity:1; filter:blur(0);}
+    }
+
+    .book{
+        width:90%;
+        max-width:600px;
+        height:300px;
+        background:#fff9e6;
+        border:2px solid #b08968;
+        border-radius:12px;
+        padding:25px;
+        box-shadow:0 0 35px rgba(0,0,0,.2);
+        overflow:auto;
+        position:relative;
+        animation:bookEnter .9s ease;
+    }
+
+    #pageNumber{
+        position:absolute;
+        bottom:10px;
+        right:20px;
+        background:#b08968;
+        color:white;
+        padding:5px 10px;
+        font-size:14px;
+        border-radius:6px;
+    }
+
+    .page{ display:none; height:100%; overflow-y:auto; }
+    .page.active{
+        display:block;
+        line-height:1.5;
+        font-size:19px;
+        text-align:justify;
+        animation:pageFlip .5s ease;
+    }
+
+    @keyframes pageFlip{
+        0%{opacity:0; transform:rotateY(-70deg);}
+        60%{transform:rotateY(10deg);}
+        100%{transform:rotateY(0); opacity:1;}
+    }
+
+    .nav-btn{
+        margin-top:15px;
+        display:flex;
+        gap:12px;
+    }
+    .nav-btn button{
+        font-size:22px;
+        padding:8px 20px;
+        border:none;
+        background:#b08968;
+        color:white;
+        border-radius:8px;
+        cursor:pointer;
+        transition:.25s;
+    }
+    .nav-btn button:hover{
+        background:#d7a372;
+        transform:scale(1.12) translateY(-2px);
+    }
+
+    .cta-section{
+        margin-top:25px;
+        display:flex;
+        gap:10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .cta-pdf-btn{
+        background:#8c6d50;
+        color:white;
+        border:none;
+        padding:10px 14px;
+        border-radius:8px;
+        font-size:15px;
+        font-weight:600;
+        cursor:pointer;
+        transition:.25s;
+    }
+    .cta-pdf-btn:hover:not(:disabled){
+        background:#b08968;
+        transform:scale(1.15) rotate(-2deg);
+    }
+    .cta-pdf-btn:disabled{
+        opacity:.35;
+        cursor:not-allowed;
+    }
+
+    #pdfBox{
+        margin-top:25px;
+        display:none;
+        width:90%;
+        max-width:700px;
+        height:450px;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 0 35px rgba(0,0,0,.35);
+        position:relative;
+    }
+    #pdfViewer{ width:100%; height:100%; border:none; }
+
+    #closePdf{
+        position:absolute;
+        top:8px;
+        right:8px;
+        background:#b08968;
+        color:white;
+        border:none;
+        padding:6px 10px;
+        border-radius:6px;
+        font-size:14px;
+        cursor:pointer;
+        font-weight:bold;
+        transition:.25s;
+        z-index:20;
+    }
+    #closePdf:hover{ transform:scale(1.15); background:#d7a372; }
+</style>
+</head>
+<body>
+
+<!-- PAGES -->
+<div class="book">
+    <div class="page active">Halo gimana kabarnya baik?gimana kuliahnya lancar juga? Aku ngetik ini saat aku lagi netral tapi agak ketriger sedikit si oiya kamu boleh buka pdf saat aku suruh yaa terus juga baca sampai slide terakhir pliss aku uda effort loh ngetik panjang begini </div>
+    <div class="page">Oke kamu boleh buka pdf 1</div>
+    <div class="page">uda di buka belum??kaget ya??ini masih belum kaget tau cuman aku sedikit syok aja, kamu bilang gasuka yang begituan tapi respon kamuu… aku tau kita putus tapi selama ini buat apa si setiap malem kita vc, kita saling ngabarin, saling curhat, dan rutinitas yang kita laluin masih sama kek pas kita pacaran, alasan aku ga mau balikan dulu aku cuman mau liat kamu tu berubah ga si dari kesalahan kamu dulu tapi yaa nyatanya kamu wkwkwkwk</div>
+    <div class="page">Oke kamu boleh buka pdf 2</div>
+    <div class="page">ini lebih kaget lagi ga dari sebelumnya??apa kamu uda tauu??Aku sebernya juga ga masalah dengan respon kamu dan aku pernah nanya kan “kamu cerita ke andra” kamu bilangnya “ga aku ga cerita” apa ga bisa ngelak kan hehe tapi aku cuman perlu kejujuran aja dari kamu nyatanya setiap aku minta kejujuran kamu selalu mengelak, kamu jugakan buka buka dm aku terus cek cek tiktok dll masa aaku ga boleh siii malah kamu yang ngerasa tersakiti but gwenchana tapi itu yang ngebuat aku berpikir kamu selalu muji muji aku ternyata masih berpaling dengan yang lain dan masih selalu bohong, inget takk aku cerita temenku punya cewe 2 balikan sama mantannya tapi tetep pacaran sama yg ldr dan disitu aku bilang dan selalu mikir “kira kira kamu kek dia ga ya” dan dijawab juga kan dengan mimpi ituu, mungkin karena aku orangnya tulus kali ya cinta sama kamu makanya langsung dapet jawaban</div>
+    <div class="page">Sebenenrya aku tu mikir aku tu kurang apa si aku ga respon sana sini, aku selalu ngenalin ke temen temen aku biar kamu ga ovtk dan ga cemburu, aku berusaha ngejar karir biar bisa jadi ibu yang baik, aku selalu jujur juga mengenai dianter sama gilang rosa, kayaknya emang aku tu selalu kurang fakk jangan nngis sorry sorry tapi semoga kalo kamu uda nemu yang baru istimewakan dia ya jangan buat dia selalu ngerasa kurang dari segi fisik ekonomi sifat dll buat dia selalu merasa beruntung </div>
+    <div class="page">okei boleh buka pdf ke 3</div>
+    <div class="page">Masih inget ga sama chat itu, kita baru banget balik main ga si itu??wkwkwkwk pas ngecek aku liat kamu bales chat dia dulu baru aku, tapi kamu digituin gamauu...pas aku liatpun kamu masi arsipin chat ku mungkin kendala device kali ya , ya gapapa si kan kita uda putus gimana si hehe gitu kan yang kamu pikir tapi aku uda jelasinn ini rutinitas kita selama masa masa putus,  cuman pas aku liat oh yauda gapapa soalnya aku uda bukan prioritas kamu jadi aku sadar diri je</div>
+    <div class="page">Lanjut yaaa</div>
+    <div class="page">lanjut buka pdf 4</div>
+    <div class="page">Chatnya kenapa kamu apus lagi dah kata kamu, kamu sekedar jualan basreng aja terus apus chatannya kamu juga saling curhat juga ya, kenapa kamu selalu ngeboongin aku? kamu nutupin serapet apapun aku juga tau WKWKWKWK, tuh kamu disuruh ipeh cari anak ipb gass sana kode tu dia cakep lagi orangnya, coba dulu aja siapa tau dia lebih ngertiin kamu, terus gampang diboongin, kalo sama aku setiap hari ngeles mulu cape kan dicurigain mulu.
+        
+        Buka pdf 5 deh
+    </div>
+    <div class="page">Ih lucu h+ asing uda reflek mau ngelus kepala utututu gemess kalian apalagi h+setaun asing uda jadian kali wkwkwkwk, itu yang namanya jualan basreng ya??aku baru tau soalnya jualan basreng bonus ngelus kepala wkwkwk, aku seneng kok kamu jualan gitu tapi ga perlu ngeboong ga sih kalo diitung itung boongnya banyak banget aku cape nanya berkali kali buat jujur tapi mengelak mengelak terus sampe taun jabot, entah disini aku yang salah pasangan atau kamu, aku selalu jujur loh ke kamu kalo aku diapa apain kalo aku diginin sama temen sekelas dll. Tapi yauda ga bisa maksa orang buat berubah juga kan cape sendiri, mending aku yang berubah buat diri aku sendiri dari pada maksa orang yang ga pernah mau berubah</div>
+    <div class="page">buka dulu pdf6 Inget kan chat itu yang katanya kamu yang sering nolak bener nih ya?</div>
+    <div class="page">Buka pdf 7 sekarangg, Bahkan sebelum ultah akupun uda selalu bareng cewe , giliran aku bareng yang lain malah ngambek cemburu gajelas pantes chatnya diapus kalo gamau digituin jangan gituin orang jangan ngerasa tersakiti jangan ngerasa playing victim, inget ga kamu pernah ngechat ke gilang mengenai eswe aku lagi kerkom dibonceng temen sekelas aku, padahal kondisinya uda putus kamu cemburukan??aku baca kok chatnya ya intinya jangan ngerasa tersakiti aja sii… mending sekalian cek pdf 8</div>
+    <div class="page">gimanaaa ini nolak kahhh???kamu taukan artinya nolak sama di tolak?mungkin demi kamu hemat uang kali ya gapapa isokeii tapi apa susahnya tinggal bilang iya aku bareng sama ini ini ini kelar ga babibu</div>
+    <div class="page">Setelah liat pdf 9 aku cuman ga nyangka aja kamu kaya gitu, aku selalu ngerasa aku kurang apa si iya aku tau aku kurus beda sama yang lain, aku gatau aku bingung cuman ke triger dikit tapi aman aja aman gemeter dikit ga ngaruh tapi gapapa, ga sekali kok aku digituin sama yang dulu dulu juga sering dibilang gitu, aku tau kok aku banyak kurangnya, kurang ngertiin kamu dll gatau aku uda bingung mau ngetik apa lagi sesek dilanjut nanti kali ya ga kuat
+        
+    </div>
+    <div class="page">Okeii kayaknya kita uda di penghujung hayat ya uda di akhir banget cuman mau bilang makasi kenangan 2 tahun, aku ga pernah nyesel ketemu kamu meskipun sakit tapi indah, makasih ya atas first experience kamu, yang selalu usahain buat aku, selalu effort buat aku, aku suka suka bangett, makasi juga uda ngajarin apa arti cinta yang sebenernya tapi kadang cinta yang mengukir keindahan itu penuh dengan kebohongan, selamat berkelana malikal nashar permana tenang aku ga akan muncul dikehidupan kamu maupun di sosial media kamu aku akan menghilang bener bener menghilang dari kehidupan kamu, kamu juga ga akan bisa bales pesan ini karena uda ga ada akses untuk kita bisa saling berkomunikasi, sekarang fokus sama lembaran baru di 2026 jangan pernah bertoleh kebelakang karena aku uda ga ada disitu dan uda ga ada dimana mana apalagi dikehidupan kamu, dan aku harap kita ga akan pernah ketemu lagi di universe ini, oiya tenang kalo kamu ada yang baru aku ga minta dikenalin kok tapi kalo kamu uda mau menikah undang ya boleh kirim undangan melalui kaka wbs atau temen temenku yang kamu kenal, sekali lagi makasi banyak ya semoga kamu bisa perlakuin mereka dengan sebaik mungkin dan bisa ngertiin kamu jugaa semangatt untuk kuliah dan kehidupan kamu I loved you.</div>
+
+    <div id="pageNumber"></div>
+</div>
+
+<div class="nav-btn">
+    <button onclick="prevPage()"> < </button>
+    <button onclick="nextPage()"> > </button>
+</div>
+
+<!-- PDF CTA -->
+<div class="cta-section">
+    <button class="cta-pdf-btn" id="pdf1" onclick="unlockPDF('CHAT1.pdf')">PDF 1</button>
+    <button class="cta-pdf-btn" id="pdf2" onclick="unlockPDF('CHAT2.pdf')">PDF 2</button>
+    <button class="cta-pdf-btn" id="pdf3" onclick="unlockPDF('CHAT4.pdf')">PDF 3</button>
+    <button class="cta-pdf-btn" id="pdf4" onclick="unlockPDF('CHAT5.pdf')">PDF 4</button>
+    <button class="cta-pdf-btn" id="pdf5" onclick="unlockPDF('CHAT6.pdf')">PDF 5</button>
+    <button class="cta-pdf-btn" id="pdf6" onclick="unlockPDF('CHAT7.pdf')">PDF 6</button>
+    <button class="cta-pdf-btn" id="pdf7" onclick="unlockPDF('CHAT8.pdf')">PDF 7</button>
+    <button class="cta-pdf-btn" id="pdf8" onclick="unlockPDF('CHAT9.pdf')">PDF 8</button>
+    <button class="cta-pdf-btn" id="pdf9" onclick="unlockPDF('CHAT10.pdf')">PDF 9</button>
+   
+</div>
+
+<!-- PDF VIEW -->
+<div id="pdfBox">
+    <iframe id="pdfViewer"></iframe>
+    <button id="closePdf" onclick="closePDF()">✕</button>
+</div>
+
+<script>
+let current = 0;
+const pages = document.querySelectorAll(".page");
+const pageNumber = document.getElementById("pageNumber");
+
+// LOCK STATE
+let pdf1Unlocked = false;
+let pdf2Unlocked = false;
+let pdf3Unlocked = false;
+let pdf4Unlocked = false;
+let pdf5Unlocked = false;
+let pdf6Unlocked = false;
+let pdf7Unlocked = false;
+let pdf8Unlocked = false;
+let pdf9Unlocked = false;
+
+function updatePage(){
+    pages.forEach(p => p.classList.remove("active"));
+    pages[current].classList.add("active");
+    pageNumber.textContent = `${current+1}/${pages.length}`;
+
+    // RESET LOCK if halaman turun
+    if(current < 1) pdf1Unlocked = false;
+    if(current < 3) pdf2Unlocked = false;
+    if(current < 5) pdf3Unlocked = false;
+    if(current < 8) pdf4Unlocked = false;
+    if(current < 9) pdf5Unlocked = false;
+    if(current < 12) pdf6Unlocked = false;
+    if(current < 13) pdf7Unlocked = false;
+    if(current < 13) pdf8Unlocked = false;
+    if(current < 15) pdf9Unlocked = false;
+
+    // Button lock/update
+    document.getElementById("pdf1").disabled = !pdf1Unlocked;
+    document.getElementById("pdf2").disabled = !pdf2Unlocked;
+    document.getElementById("pdf3").disabled = !pdf3Unlocked;
+    document.getElementById("pdf4").disabled = !pdf4Unlocked;
+    document.getElementById("pdf5").disabled = !pdf5Unlocked;
+    document.getElementById("pdf6").disabled = !pdf6Unlocked;
+    document.getElementById("pdf7").disabled = !pdf7Unlocked;
+    document.getElementById("pdf8").disabled = !pdf8Unlocked;
+    document.getElementById("pdf9").disabled = !pdf9Unlocked;
+    
+    // Auto unlock ONLY if page requirement terpenuhi lagi
+    if(current >= 0) pdf1Unlocked = true;
+    if(current >= 2) pdf2Unlocked = true;
+    if(current >= 5) pdf3Unlocked = true;
+    if(current >= 8) pdf4Unlocked = true;
+    if(current >= 9) pdf5Unlocked = true;
+    if(current >= 11) pdf6Unlocked = true;
+    if(current >= 12) pdf7Unlocked = true;
+    if(current >= 12) pdf8Unlocked = true;
+    if(current >= 14) pdf9Unlocked = true;
+}
+
+function nextPage(){ if(current < pages.length-1){ current++; updatePage(); closePDF(); } }
+function prevPage(){ if(current > 0){ current--; updatePage(); closePDF(); } }
+
+function unlockPDF(file){
+    document.getElementById("pdfViewer").src = file;
+    document.getElementById("pdfBox").style.display="block";
+}
+
+function closePDF(){
+    document.getElementById("pdfBox").style.display="none";
+    document.getElementById("pdfViewer").src="";
+}
+
+updatePage();
+</script>
+
+</body>
+</html>

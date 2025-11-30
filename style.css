@@ -1,0 +1,66 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+    margin:0; display:flex; justify-content:center; align-items:center;
+    min-height:100vh; text-align:center;
+}
+
+/* Halaman 1 */
+.login-box{
+    background:white; padding:30px; border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,.2);
+    animation: pop 0.8s ease;
+}
+.login-box input{ 
+    width:80%; padding:10px; font-size:18px; border-radius:10px; border:none;
+    background:#f2f2f2; margin-top:10px;
+}
+.login-box button{
+    margin-top:15px; padding:12px 25px; border:none; border-radius:50px;
+    background:#ff77a9; color:white; font-size:17px; cursor:pointer;
+    transition:.3s;
+}
+.login-box button:hover{ transform:scale(1.1); background:#ff4d88; }
+
+/* Halaman Buku */
+.book-container{
+    background:white; padding:25px; width:90%; max-width:420px;
+    border-radius:25px; box-shadow:0 0 30px rgba(0,0,0,.25);
+    animation: slide 0.9s ease;
+}
+.book-page{
+    background:#fff3f7; padding:20px; border-radius:15px;
+    font-size:17px; min-height:120px; animation: fade 0.8s;
+}
+.nav-btn button{
+    margin:10px; padding:10px 18px; border:none;
+    border-radius:10px; background:#ff8ebe; color:white;
+    font-size:20px; cursor:pointer; transition:.3s;
+}
+.nav-btn button:hover{ transform:scale(1.2) }
+
+/* CTA Image */
+.cta-title{ margin-top:25px; color:white; text-shadow:2px 3px 5px rgba(0,0,0,.4); }
+.cta-container{
+    display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-top:10px;
+}
+.cta-container img{
+    width:80px; height:80px; object-fit:cover; border-radius:15px;
+    cursor:pointer; transition:.4s; filter:grayscale(1);
+}
+.cta-container img:hover{ transform:scale(1.2); filter:grayscale(0); }
+
+/* Popup */
+.popup{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.7);
+    justify-content:center; align-items:center;
+}
+.popup img{
+    width:80%; max-width:350px; border-radius:20px;
+    animation: pop .5s;
+}
+
+/* Animations */
+@keyframes pop{ from{transform:scale(.5); opacity:0} to{transform:scale(1);opacity:1} }
+@keyframes slide{ from{transform:translateY(40px);opacity:0} to{transform:translateY(0);opacity:1} }
+@keyframes fade{ from{opacity:0} to{opacity:1} }

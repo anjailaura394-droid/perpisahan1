@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- WAJIB AGAR RESPONSIF -->
+<title>Masukkan Kode</title>
+
+<style>
+    body{
+        margin:0;
+        background:#0f0f0f;
+        font-family:'Poppins', sans-serif;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        color:white;
+        padding:20px;
+        box-sizing:border-box;
+    }
+
+    .box{
+        background:rgba(255,255,255,0.08);
+        padding:25px;
+        border-radius:18px;
+        text-align:center;
+        width:350px;
+        max-width:100%;
+        backdrop-filter:blur(10px);
+        box-shadow:0 0 20px rgba(0,255,150,.3);
+        animation:fade 0.5s ease;
+    }
+
+    @keyframes fade {
+        from {opacity:0; transform:translateY(10px);}
+        to {opacity:1; transform:translateY(0);}
+    }
+
+    #display{
+        width:90%;
+        height:48px;
+        background:black;
+        color:#00ff91;
+        font-size:22px;
+        margin-bottom:18px;
+        border-radius:8px;
+        letter-spacing:8px;
+        border:none;
+        text-align:center;
+    }
+
+    .keypad{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:12px;
+    }
+
+    button{
+        background:#111;
+        color:white;
+        border:none;
+        font-size:22px;
+        padding:18px 0;
+        border-radius:10px;
+        cursor:pointer;
+        transition:.2s;
+    }
+    button:hover{
+        background:#00ff91;
+        color:black;
+        transform:scale(1.05);
+    }
+
+    .enter{
+        background:#00ff91;
+        color:black;
+        font-weight:600;
+    }
+    .enter:hover{
+        background:#00ffaa;
+    }
+
+    #error{
+        margin-top:10px;
+        font-size:14px;
+        color:#ff4b4b;
+    }
+
+    /* ---------------- RESPONSIVE MODE ---------------- */
+    @media (max-width: 480px){
+        .box{ width:300px; padding:20px; }
+        #display{ font-size:20px; height:45px; letter-spacing:6px; }
+        button{ font-size:20px; padding:14px 0; }
+    }
+
+    @media (max-width: 350px){
+        .box{ width:260px; }
+        #display{ font-size:18px; letter-spacing:5px; }
+        button{ font-size:18px; padding:12px 0; }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="box">
+    <h2>Masukkan PIN</h2>
+    <input type="password" id="display" disabled placeholder="••••">
+
+    <div class="keypad">
+        <button onclick="addNum('1')">1</button>
+        <button onclick="addNum('2')">2</button>
+        <button onclick="addNum('3')">3</button>
+        <button onclick="addNum('4')">4</button>
+        <button onclick="addNum('5')">5</button>
+        <button onclick="addNum('6')">6</button>
+        <button onclick="addNum('7')">7</button>
+        <button onclick="addNum('8')">8</button>
+        <button onclick="addNum('9')">9</button>
+
+        <button onclick="clearInput()">⌫</button>
+        <button onclick="addNum('0')">0</button>
+        <button class="enter" onclick="cekKode()">ENTER</button>
+    </div>
+
+    <p id="error"></p>
+</div>
+
+<script>
+    let input = "";
+    const kodeBenar = "200623"; // GANTI KODE DI SINI
+
+    function addNum(num){
+        if(input.length < 6){
+            input += num;
+            document.getElementById("display").value = "*".repeat(input.length);
+        }
+    }
+
+    function clearInput(){
+        input = input.slice(0,-1);
+        document.getElementById("display").value = "*".repeat(input.length);
+    }
+
+    function cekKode(){
+        if(input === kodeBenar){
+            window.location.href = "halaman2.html";
+        } else {
+            document.getElementById("error").innerHTML="Kode salah!";
+            input="";
+            document.getElementById("display").value="";
+        }
+    }
+</script>
+
+</body>
+</html>
